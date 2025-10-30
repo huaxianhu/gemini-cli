@@ -439,9 +439,7 @@ export async function loadCliConfig(
   const { memoryContent, fileCount, filePaths } =
     await loadHierarchicalGeminiMemory(
       cwd,
-      settings.context?.loadMemoryFromIncludeDirectories
-        ? includeDirectories
-        : [],
+      [],
       debugMode,
       fileService,
       settings,

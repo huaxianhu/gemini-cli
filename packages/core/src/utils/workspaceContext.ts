@@ -28,11 +28,14 @@ export class WorkspaceContext {
    * @param additionalDirectories Optional array of additional directories to include
    */
   constructor(directory: string, additionalDirectories: string[] = []) {
+    console.log('In constructor');
     this.addDirectory(directory);
     for (const additionalDirectory of additionalDirectories) {
+      console.log('In constructor additionalDirectory');
       this.addDirectory(additionalDirectory);
     }
     this.initialDirectories = new Set(this.directories);
+    console.log('end In constructor');
   }
 
   /**
@@ -73,6 +76,7 @@ export class WorkspaceContext {
         return;
       }
       this.directories.add(resolved);
+      console.log('Added dir:', resolved);
       this.notifyDirectoriesChanged();
     } catch (err) {
       debugLogger.warn(

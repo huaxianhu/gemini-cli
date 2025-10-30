@@ -38,7 +38,9 @@ export const DefaultAppLayout: React.FC = () => {
       <Box flexDirection="column" ref={uiState.mainControlsRef}>
         <Notifications />
 
-        {uiState.dialogsVisible ? (
+        {uiState.customDialog ? (
+          uiState.customDialog
+        ) : uiState.dialogsVisible ? (
           <DialogManager
             terminalWidth={uiState.mainAreaWidth}
             addItem={uiState.historyManager.addItem}

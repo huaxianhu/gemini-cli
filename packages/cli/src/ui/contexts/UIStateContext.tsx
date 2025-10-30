@@ -123,6 +123,7 @@ export interface UIState {
   embeddedShellFocused: boolean;
   showDebugProfiler: boolean;
   showFullTodos: boolean;
+  customDialog: React.ReactNode | null;
 }
 
 export const UIStateContext = createContext<UIState | null>(null);
